@@ -1,0 +1,5 @@
+package com.biswa.service;
+
+public class EmployeeConsumeServiceImpl implements EmployeeConsumeService{
+
+}

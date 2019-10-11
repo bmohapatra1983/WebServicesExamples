@@ -1,0 +1,7 @@
+127.0.0.1 - - [25/Sep/2019:10:29:28 +0530] "GET / HTTP/1.1" 404 1076
+0:0:0:0:0:0:0:1 - - [25/Sep/2019:10:29:30 +0530] "GET /SecureRESTApiWithBasicAuthentication/ HTTP/1.1" 404 1113
+0:0:0:0:0:0:0:1 - - [25/Sep/2019:10:30:02 +0530] "GET /SecureRESTApiWithBasicAuthentication/user HTTP/1.1" 404 1117
+0:0:0:0:0:0:0:1 - - [25/Sep/2019:10:30:40 +0530] "GET /SecureRESTApiWithBasicAuthentication/user/ HTTP/1.1" 404 1118
+0:0:0:0:0:0:0:1 - - [25/Sep/2019:10:30:43 +0530] "GET /SecureRESTApiWithBasicAuthentication/user/ HTTP/1.1" 404 1118
+0:0:0:0:0:0:0:1 - - [25/Sep/2019:10:30:43 +0530] "GET /SecureRESTApiWithBasicAuthentication/user/ HTTP/1.1" 404 1118
+0:0:0:0:0:0:0:1 - - [25/Sep/2019:10:30:43 +0530] "GET /SecureRESTApiWithBasicAuthentication/user/ HTTP/1.1" 404 1118

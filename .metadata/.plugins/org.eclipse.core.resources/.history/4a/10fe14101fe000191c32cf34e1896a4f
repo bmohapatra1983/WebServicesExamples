@@ -1,0 +1,7 @@
+package com.biswa.service;
+
+import org.springframework.http.ResponseEntity;
+
+public interface EmployeeConsumeService {
+	public ResponseEntity<String> consumeJsonData();
+}

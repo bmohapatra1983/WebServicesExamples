@@ -1,0 +1,19 @@
+package com.biswa.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.NamedStoredProcedureQuery;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
+
+@Entity
+@NamedStoredProcedureQuery(name = "showStockPosition", procedureName = "STOCK_POSITION", parameters = {
+		@StoredProcedureParameter(mode = ParameterMode.IN, name = "i_sql_type", type = Integer.class),
+		@StoredProcedureParameter(mode = ParameterMode.IN, name = "input_string1", type = Integer.class),
+		@StoredProcedureParameter(mode = ParameterMode.OUT, name = "REC_settlement", type = Integer.class),
+		@StoredProcedureParameter(mode = ParameterMode.OUT, name = "O_MSG", type = Integer.class)})
+public class Stock implements Serializable{
+	private static final long serialVersionUID = 1L;
+
+}

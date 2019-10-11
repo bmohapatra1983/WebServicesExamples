@@ -1,0 +1,11 @@
+package com.biswa.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface StockDAO<StockDetails> extends JpaRepository<StockDetails, String> {
+public static interface StockDetails{
+	
+}
+}

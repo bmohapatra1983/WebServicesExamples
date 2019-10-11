@@ -1,0 +1,5 @@
+package com.biswa.dao;
+
+public interface StockDAO {
+
+}

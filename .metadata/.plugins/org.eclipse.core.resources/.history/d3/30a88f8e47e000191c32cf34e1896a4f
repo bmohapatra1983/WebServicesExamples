@@ -1,0 +1,63 @@
+package com.biswa.controller;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.biswa.dao.EmployeeDAO;
+import com.biswa.entity.Employee;
+
+@RestController
+public class EmployeeController {
+	@Autowired
+	EmployeeDAO employeeDAO;
+
+	// Method to save Employee
+	// @RequestMapping("/addEmployee")
+	@PutMapping(value = "/addEmployee", consumes = { "application/json" })
+	public String save(@RequestBody Employee e) {
+		// Employee e = new Employee();
+		// e.setId(1111);
+		// e.setName("Saumyaranjan Mohapatra");
+		// e.setJob("Project Engineer");
+		// e.setSalary(855555);
+		System.out.println(e.getId());
+		employeeDAO.save(e);
+		return "saved";
+	}
+
+	@GetMapping(value = "/getAllEmployee", produces = { "application/json" })
+	public Iterable<Employee> getAllEmployee() {
+		return employeeDAO.findAll();
+	}
+
+	// Method to return an Employee using id
+	@GetMapping(value = "/{id}", produces = { "application/json" })
+	public Employee getById(@PathVariable int id) {
+		Employee e = null;
+		Optional<Employee> op = employeeDAO.findById(id);
+		if (op.isPresent())
+			e = op.get();
+		return e;
+	}
+
+	// Method to delete an Employee using id
+	@DeleteMapping(value = "/{id}")
+	public String remove(@PathVariable int id) {
+		employeeDAO.deleteById(id);
+		return "deleted";
+	}
+
+	// Method to update Employee
+	@PutMapping(value = "/", consumes = { "application/json" })
+	public String update(@RequestBody Employee e) {
+		employeeDAO.save(e);
+		return "Updated.";
+	}
+}

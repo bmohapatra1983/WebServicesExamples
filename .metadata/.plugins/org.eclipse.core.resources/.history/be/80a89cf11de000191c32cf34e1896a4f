@@ -1,0 +1,10 @@
+package com.biswa.service;
+
+import org.springframework.http.ResponseEntity;
+
+public class EmployeeConsumeServiceImpl implements EmployeeConsumeService{
+@Override
+public ResponseEntity<String> consumeJsonData() {
+	return null;
+}
+}

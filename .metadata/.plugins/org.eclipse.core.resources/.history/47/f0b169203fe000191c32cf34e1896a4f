@@ -1,0 +1,13 @@
+package com.biswa.dao;
+import org.jboss.logging.Param;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.query.Procedure;
+import org.springframework.stereotype.Repository;
+
+import com.biswa.entity.Stock;
+
+@Repository
+public interface StockDAO extends JpaRepository<Stock,Integer>{
+@Procedure(name = "showStockPosition")
+String showStockPosition(@Param);
+}
