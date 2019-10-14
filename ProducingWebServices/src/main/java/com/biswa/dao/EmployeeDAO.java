@@ -2,11 +2,8 @@ package com.biswa.dao;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.biswa.entity.Employee;
 
@@ -14,7 +11,7 @@ import com.biswa.entity.Employee;
 public interface EmployeeDAO extends CrudRepository<Employee, Integer> {
 	@Query(value = "select * from emp where id= ?1", nativeQuery = true)
 	ArrayList<Employee> getEmployeeData(int id);
-	@Query(value = "SELECT x.DATE_OF_TRN, nvl(z.dp_sname,'NA') AS short_name, nvl(z.dp_lname,'NA') AS long_name, x.pl_no, nvl(y.des,'NA') AS description, x.stock AS quantity, x.stock_value FROM immis.mmm_stock x, immis.mmm_item y, immis.mgm_depot z FETCH FIRST 100 ROW ONLY", nativeQuery = true)
+	@Query(value = "SELECT x.DATE_OF_TRN, nvl(z.dp_sname,'NA') AS short_name, nvl(z.dp_lname,'NA') AS long_name, x.pl_no, nvl(y.des,'NA') AS description, x.stock AS quantity, x.stock_value FROM immis.mmm_stock x, immis.mmm_item y, immis.mgm_depot z FETCH FIRST 150 ROW ONLY", nativeQuery = true)
 	LinkedList<StockDetails> getStockDetails();
 
 	/*

@@ -1,0 +1,10 @@
+package com.biswa.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SchedulerTest {
+public String showData() {
+	return "Hello";
+}
+}
